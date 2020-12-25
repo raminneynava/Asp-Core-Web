@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Data.Dtos;
 using Entities;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,6 +14,7 @@ namespace Services.MappingProfiles
         {
             CreateMap<BlogCategory, BlogCategoryDto>().ReverseMap();
             CreateMap<Blog, BlogDto>().ReverseMap();
+            CreateMap<IdentityUser, UserListDto>().ReverseMap();
         }
     }
 }

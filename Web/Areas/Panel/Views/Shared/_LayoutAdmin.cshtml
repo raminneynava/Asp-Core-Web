@@ -1,16 +1,17 @@
 ﻿
 <!DOCTYPE html>
-<html lang="en">
+<html dir="rtl" lang="fa">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>پنل مدیریت | شروع سریع</title>
+    <title>پنل مدیریت | @ViewData["headertitle"]</title>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <link href="~/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Admin/plugins/datatables/dataTables.bootstrap4.css" rel="stylesheet" />
     <link href="~/Admin/css/adminlte.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    <link href="~/Admin/css/bootstrap-rtl.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-rtl.min.css" rel="stylesheet" />
     <link href="~/Admin/css/custom-style.css" rel="stylesheet" />
 
     @RenderSection("Style", required: false)
@@ -127,11 +128,6 @@
                         <a href="#" class="dropdown-item dropdown-footer">مشاهده همه نوتیفیکیشن</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
-                        <i class="fa fa-th-large"></i>
-                    </a>
-                </li>
             </ul>
         </nav>
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -152,38 +148,8 @@
                     </div>
                     <nav class="mt-2">
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                            <li class="nav-item has-treeview menu-open">
-                                <a href="#" class="nav-link active">
-                                    <i class="nav-icon fa fa-dashboard"></i>
-                                    <p>
-                                        صفحات شروع
-                                        <i class="right fa fa-angle-left"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link active">
-                                            <i class="fa fa-circle-o nav-icon"></i>
-                                            <p>صفحه فعال</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="fa fa-circle-o nav-icon"></i>
-                                            <p>صفحه غیر فعال</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon fa fa-th"></i>
-                                    <p>
-                                        لینک ساده
-                                        <span class="right badge badge-danger">جدید</span>
-                                    </p>
-                                </a>
-                            </li>
+                            @*menu*@
+                            @await Html.PartialAsync("/Areas/Panel/Views/Shared/Partials/_menuBar.cshtml")
                         </ul>
                     </nav>
                 </div>
@@ -223,9 +189,10 @@
         </footer>
     </div>
 
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Admin/plugins/datatables/datatables.js"></script>
+    <script src="~/Admin/plugins/datatables/dataTables.bootstrap4.js"></script>
     <script src="~/Admin/js/adminlte.min.js"></script>
-
     @RenderSection("Scripts", required: false)
     @RenderSection("Modals", required: false)
 </body>

@@ -14,11 +14,11 @@ namespace Data.Interfaces
         DbSet<TEntity> Entities { get; }
         IQueryable<TEntity> Table { get; }
         IQueryable<TEntity> TableNoTracking { get; }
+        ValueTask<TEntity> GetByIdAsync(params object[] ids);
         Task AddAsync(TEntity entity, bool saveNow = true);
         Task AddRangeAsync(IEnumerable<TEntity> entities, bool saveNow = true);
         Task DeleteAsync(TEntity entity, bool saveNow = true);
         Task DeleteRangeAsync(IEnumerable<TEntity> entities, bool saveNow = true);
-        ValueTask<TEntity> GetByIdAsync(params object[] ids);
         Task UpdateAsync(TEntity entity, bool saveNow = true);
         Task UpdateRangeAsync(IEnumerable<TEntity> entities, bool saveNow = true);
         Task LoadCollectionAsync<TProperty>(TEntity entity, Expression<Func<TEntity, IEnumerable<TProperty>>> collectionProperty) where TProperty : class;

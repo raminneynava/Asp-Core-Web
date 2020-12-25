@@ -25,7 +25,6 @@ namespace Data.Repositories
         }
         public virtual ValueTask<TEntity> GetByIdAsync(params object[] ids)
         {
-            
             return Entities.FindAsync(ids);
         }
         public virtual async Task AddAsync(TEntity entity, bool saveNow = true)

@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+    <li class="nav-item">
+        <a asp-area="Panel" asp-controller="Panel" asp-action="Dashboard" class="nav-link">
+            <i class="nav-icon fa fa-th"></i>
+            <p>
+                داشبورد
+            </p>
+        </a>
+    </li>
+<li class="nav-item has-treeview menu-open">
+    <a href="#" class="nav-link active">
+        <i class="nav-icon fa fa-users"></i>
+        <p>
+            بخش کاربری
+            <i class="right fa fa-angle-left"></i>
+        </p>
+    </a>
+    <ul class="nav nav-treeview">
+        <li class="nav-item">
+            <a asp-area="Panel"asp-controller="UserManage" asp-action="Index"  class="nav-link">
+                <i class="fa fa-user-circle nav-icon"></i>
+                <p>مدیریت کاربران</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="fa fa-circle-o nav-icon"></i>
+                <p>صفحه غیر فعال</p>
+            </a>
+        </li>
+    </ul>
+</li>
+<li class="nav-item">
+    <a href="#" class="nav-link">
+        <i class="nav-icon fa fa-th"></i>
+        <p>
+            لینک ساده
+            <span class="right badge badge-danger">جدید</span>
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="#" class="nav-link">
+        <i class="nav-icon fa fa-th"></i>
+        <p>
+            لینک ساده
+            <span class="right badge badge-danger">جدید</span>
+        </p>
+    </a>
+</li>
